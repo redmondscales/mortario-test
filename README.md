@@ -10,7 +10,7 @@ Example
 {
     "city_name": "LONDON",
     "condition": "cloudy",
-    "temperature_clesius": 12.0,
+    "temperature_celsuis": 12.0,
     "timestamp": "Mon, 30 Oct 2023 12:00:00 GMT"
 }
 
@@ -24,13 +24,13 @@ Example
     "LONDON": {
         "city_name": "LONDON",
         "condition": "cloudy",
-        "temperature_clesius": 12.0,
+        "temperature_celsius": 12.0,
         "timestamp": "Mon, 30 Oct 2023 12:00:00 GMT"
     },
     "MANCHESTER": {
         "city_name": "MANCHESTER",
         "condition": " "rainy",
-        "temperature_clesius": 10.0,
+        "temperature_celsius": 10.0,
         "timestamp": "Mon, 30 Oct 2023 12:00:00 GMT"
     }
     ...
@@ -47,7 +47,7 @@ Example
 {
     "city_name": "London",
     "condition": "cloudy" | "sunny" | "rainy",
-    "temperature_clesius": 10.0 (float between -50 and 75),
+    "temperature_celsuis": 10.0 (float between -50 and 75),
     "timestamp": "2021-01-01T00:00:00Z" (ISO 8601 format)
 }
 

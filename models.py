@@ -13,12 +13,12 @@ class WeatherCityQuery(BaseModel):
 
     @field_validator("city_name")
     def city_upper(cls, v):
+        # convert city name to uppercase on validation
         return v.upper()
 
 
 class WeatherReport(BaseModel):
     # pydantic model for a weather report
-    # convert to uppercase
 
     class Condition(str, Enum):
         SUNNY = "sunny"
@@ -40,7 +40,6 @@ class WeatherReport(BaseModel):
 
     @field_validator("timestamp")
     def not_future_timestamp(cls, v):
-        # simple check, doesn't account for timezones
         if v > datetime.now(tz=timezone.utc):
             raise ValueError("Timestamp cant be in future.")
 
@@ -66,11 +65,7 @@ def sort_weather_reports(city):
 
 
 def get_latest_report_all_cities():
-    return {
-        city: get_latest_report(city)
-        for city in WEATHER_REPORTS
-        # if WEATHER_REPORTS[city]
-    }
+    return {city: get_latest_report(city) for city in WEATHER_REPORTS}
 
 
 def get_latest_report(city):
