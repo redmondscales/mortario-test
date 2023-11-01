@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 import json
 from flask import Flask, jsonify, request
 from pydantic import ValidationError
@@ -110,7 +111,7 @@ if __name__ == "__main__":
             {
                 "city_name": city,
                 "temperature_celsius": 15,
-                "timestamp": "2023-10-30T13:00:00Z",
+                "timestamp": datetime.now(tz=timezone.utc),
                 "condition": "sunny",
             }
         )
