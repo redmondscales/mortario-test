@@ -98,7 +98,6 @@ def test_cant_report_in_future(client):
 
 
 def test_cant_report_invalid_condition(client):
-    later = datetime.now(tz=timezone.utc) + timedelta(hours=1)
     report = {
         "city_name": "London",
         "temperature_celsius": 10,
